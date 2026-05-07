@@ -1,5 +1,7 @@
 # Good First Issues
 
+These are practical starter tasks for contributors who want to improve Angular AI frontend examples.
+
 - Add fake product table
 - Add workflow execution replay
 - Add approval modal
@@ -8,7 +10,5 @@
 - Add role-based action permissions
 - Add responsive agent panel
 - Add test cases
-
-## Notes
-
-These are contribution ideas, not promises of active maintainer support. Keep PRs small and avoid real secrets or private data.
+- Add screenshot/GIF
+- Add keyboard accessibility
