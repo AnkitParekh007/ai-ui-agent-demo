@@ -1,25 +1,36 @@
 # What This Proves
 
-## UI-Aware Agent Thinking
+## Technical Proof
 
-The demo shows how an agent can reason over route, selected record, visible fields, and role.
+UI-aware Angular agent demo with context inspection, suggested actions, approval flow, action log, and recovery state.
 
-## DOM / Page-Context Serialization
+## Roles It Supports
 
-The context serializer models a safe whitelist rather than dumping raw DOM or hidden data.
+AI Product Engineer / Copilot UI Engineer
 
-## Workflow Automation UX
+## Architecture Patterns Demonstrated
 
-Suggested actions, workflow steps, and execution logs make automation visible.
+- Typed Angular models and services.
+- Mock-first AI frontend behavior.
+- User-visible state instead of hidden automation.
+- Documentation that explains intent, tradeoffs, and limitations.
 
-## Human Approval Design
+## What A Recruiter Should Notice
 
-Sensitive actions pause for approval before execution.
+This repo is designed to be understandable within 30 seconds and to show practical AI frontend architecture rather than generic demo code.
 
-## Error Recovery UX
+## What A Technical Interviewer Can Ask
 
-The recovery panel shows how failure can be explained and retried.
+What context should a UI-aware agent receive, and what should be excluded?
 
-## Enterprise AI Interaction Design
+## What Is Mocked Vs Real
 
-The design supports role-aware context, audit-friendly logs, and human-in-the-loop workflow control.
+- Mocked: AI/model responses, RAG retrieval, tool execution, approvals, and workflow data.
+- Real: Angular project structure, TypeScript models, UI architecture, documentation, and buildable repo scaffold where applicable.
+
+## What Is Not Claimed
+
+- No production users are claimed.
+- No merged upstream PRs are claimed.
+- No private company code or customer data is included.
+- No API keys or provider credentials are required.
