@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "node --import tsx --test tests/**/*.spec.ts",
     "lint": "ng lint"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "@angular/cli": "^20.3.13",
     "@angular/compiler-cli": "^20.3.0",
     "typescript": "~5.8.0",
-    "@angular/build": "^20.3.13"
+    "@angular/build": "^20.3.13",
+    "tsx": "^4.20.6"
   }
 }

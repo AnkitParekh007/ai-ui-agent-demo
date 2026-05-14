@@ -4,4 +4,6 @@ export interface AgentAction {
   description: string;
   riskLevel: 'low' | 'medium' | 'high';
   requiresApproval: boolean;
+  outcome: 'success' | 'failure';
+  category?: 'review' | 'workflow' | 'communication';
 }

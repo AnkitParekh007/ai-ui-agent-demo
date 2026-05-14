@@ -4,4 +4,6 @@ export interface UiContext {
   selectedRecordId?: string;
   visibleFields: string[];
   userRole: string;
+  selectedRecordStatus?: string;
+  selectedRecordOwner?: string;
 }

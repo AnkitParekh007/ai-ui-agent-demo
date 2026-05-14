@@ -1,197 +1,92 @@
 # AI UI Agent Demo
 
+An Angular demo of a UI-aware AI agent that reads safe page context, suggests workflow actions, asks for approval, executes mocked actions, and surfaces recovery states in a visible operator UI.
 
+All actions in this repo are mocked and safe. There is no real browser automation, no hidden backend execution, and no unsafe workflow mutation.
 
-![Angular](https://img.shields.io/badge/Angular-20-red) ![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue) ![Mock Agent](https://img.shields.io/badge/Agent-Mock%20Only-green)
+![Dashboard placeholder](docs/assets/screenshots/main-screen.png)
 
+## Live Demo And Docs
 
+Planned GitHub Pages target:
+[https://ankitparekh007.github.io/ai-ui-agent-demo/](https://ankitparekh007.github.io/ai-ui-agent-demo/)
 
-Angular demo of a UI-aware AI agent that reads page context, suggests workflow actions, requests approval, and shows execution state.
+Until that is deployed, use the local demo and the docs in this repo.
 
+## 20-Second GIF
 
-
-![Preview placeholder](docs/assets/screenshots/main-screen.png)
-
-
-
-## Why Star This Repo?
-
-- See how UI-aware agents can inspect context and suggest actions
-- Learn approval-first AI workflow UX
-- Reuse patterns for action logs, context panels, and recovery states
-- Use it as a demo of AI as a user frontend thinking
-
-## Live Demo
-
-**Demo URL:** [add deployed demo URL]
+Placeholder path for the launch clip:
+`docs/assets/screenshots/ui-agent-flow.gif`
 
 ## What The Demo Shows
 
-
-
-- Fake enterprise dashboard/page with table and form context.
-
-- AI agent side panel.
-
-- Context inspector for route, selected record, visible fields, and role.
-
-- Suggested next actions.
-
-- Approval dialog/card for workflow-changing action.
-
-- Action execution timeline.
-
-- Error/recovery state.
-
-- Mock browser/user action simulation.
-
-
+- fake enterprise dashboard with customer and product queue
+- selected record detail panel with visible fields
+- agent side panel with serialized safe context
+- suggested actions based on the selected record
+- approval-first workflow handling
+- action execution timeline
+- recovery and error panel
+- action log for audit-friendly review
 
 ## Why UI Context Matters
 
-
-
-A UI-aware agent needs to know what page the user is on, what record is selected, what fields are visible, and what role/permissions apply. This demo shows how that context can be serialized safely and rendered visibly before action.
-
-
-
-## Architecture
-
-
-
-```mermaid
-
-flowchart LR
-
-    Page["Enterprise page"] --> Serializer["ContextSerializerService"]
-
-    Serializer --> Agent["MockAgentService"]
-
-    Agent --> Suggestions["Suggested actions"]
-
-    Suggestions --> Approval["Approval card"]
-
-    Approval --> Runner["WorkflowRunnerService"]
-
-    Runner --> Log["Action log"]
-
-    Runner --> Recovery["Recovery panel"]
-
-```
-
-
-
-## How To Run
-
-
-
-```bash
-
-npm install
-
-npm start
-
-```
-
-
-
-Build check:
-
-
-
-```bash
-
-npm run build
-
-```
-
-
-
-No API key is required. All agent behavior is mocked.
-
-
+An agent should not receive the entire hidden application state just because it can. This demo shows the opposite approach: serialize only safe, visible, relevant context such as route, role, selected record, status, owner, and visible fields. That makes the interaction easier to reason about, easier to debug, and safer to review with users.
 
 ## Demo Script
 
+1. Open the fake customer operations dashboard.
+2. Select a different record in the customer table and show how the context inspector changes.
+3. Review the selected record detail panel and visible fields.
+4. Click a suggested action that requires approval.
+5. Approve the mocked workflow and show the execution timeline.
+6. Trigger the mocked recovery action and show the recovery panel plus action log.
 
+## Architecture
 
-1. Open the dashboard and select the mock customer record.
+```mermaid
+flowchart LR
+    Dashboard["Dashboard and selected record"] --> Serializer["ContextSerializerService"]
+    Serializer --> Agent["MockAgentService"]
+    Agent --> Suggestions["Suggested actions"]
+    Suggestions --> Approval["ActionApprovalService"]
+    Approval --> Runner["WorkflowRunnerService"]
+    Runner --> Timeline["Execution timeline"]
+    Runner --> Recovery["Recovery panel"]
+    Runner --> Log["Action log"]
+```
 
-2. Inspect the context panel: route, role, visible fields, and selected record.
+## Run Locally
 
-3. Review suggested next actions from the mock agent.
+```bash
+npm install
+npm start
+```
 
-4. Open the approval flow for the workflow-changing action.
+Validation:
 
-5. Show the execution timeline and action log.
+```bash
+npm run build
+npm test
+```
 
-6. Point out the recovery panel and how failed actions would be handled.
+## What This Proves For Recruiters
 
+- Angular architecture for UI-aware agent experiences
+- safe context serialization instead of vague “AI reads the page” claims
+- approval-first workflow UX
+- visible execution and recovery states
+- honest mocking boundaries without fake automation claims
 
+## Docs
 
-## Recruiter Value
-
-
-
-This repo proves UI-aware agent thinking: DOM/page-context serialization, approval UX, action execution visibility, recovery states, and enterprise AI interaction design.
-
-
-
-## Interview Talking Points
-
-
-
-- Why agents need safe page context instead of raw hidden DOM.
-
-- How approval flows reduce risk for workflow automation.
-
-- How action logs and recovery panels make automation auditable.
-
-- How Angular services separate context, agent planning, approvals, and execution.
-
-## Who This Helps
-
-- Frontend engineers moving into AI product engineering
-- Angular teams building copilots
-- AI startups needing enterprise UI patterns
-- Product teams adding RAG and tool calling to web apps
-- Recruiters evaluating AI frontend architecture depth
-- Maintainers looking for Angular examples or UI adapters
-
+- [Context serialization](docs/context-serialization.md)
+- [Approval-first agent UX](docs/approval-first-agent-ux.md)
+- [Action execution timeline](docs/action-execution-timeline.md)
+- [Recovery states](docs/recovery-states.md)
+- [Recruiter review guide](docs/recruiter-review-guide.md)
+- [Screenshot and GIF capture guide](docs/screenshots.md)
 
 ## Contributing
 
-Contributions are welcome around:
-
-- Angular component improvements
-- accessibility
-- documentation
-- mock data examples
-- UI states
-- RAG source rendering
-- MCP/tool-call examples
-- testing
-- demo deployment
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [GOOD_FIRST_ISSUES.md](GOOD_FIRST_ISSUES.md).
-
-
-## Good First Issues
-
-- Add fake product table
-- Add workflow execution replay
-- Add approval modal
-- Add recovery scenario
-- Add context diff viewer
-- Add role-based action permissions
-- Add responsive agent panel
-- Add test cases
-- Add screenshot/GIF
-- Add keyboard accessibility
-
-
-## Follow Along
-
-I am building Angular-first AI frontend patterns for copilots, RAG UX, MCP/tool calling, UI-aware agents, and enterprise AI interfaces.
-
-Star or watch this repo if you want updates.
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [GOOD_FIRST_ISSUES.md](GOOD_FIRST_ISSUES.md). The best contributions here are practical: one richer mock scenario, one accessibility improvement, one test case, or one clearer demo artifact.

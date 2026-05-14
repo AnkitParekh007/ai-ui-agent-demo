@@ -5,4 +5,5 @@ export interface ApprovalRequest {
   riskLevel: 'low' | 'medium' | 'high';
   summary: string;
   approved: boolean | null;
+  reason: string;
 }
