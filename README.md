@@ -8,10 +8,10 @@ All actions in this repo are mocked and safe. There is no real browser automatio
 
 ## Live Demo And Docs
 
-Planned GitHub Pages target:
+Live demo:
 [https://ankitparekh007.github.io/ai-ui-agent-demo/](https://ankitparekh007.github.io/ai-ui-agent-demo/)
 
-Until that is deployed, use the local demo and the docs in this repo.
+The repo remains mock-only and safe, but the Angular demo is now deployable through GitHub Pages.
 
 ## 20-Second GIF
 
